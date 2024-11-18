@@ -20,3 +20,4 @@
 import { IonTabs, IonRouterOutlet, IonTabBar, IonTabButton, IonIcon, IonLabel } from "@ionic/vue";
 import { home, person } from "ionicons/icons";
 </script>
+

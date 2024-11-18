@@ -70,3 +70,4 @@ export const useAuthStore = defineStore("auth", () => {
 
   return { user, isAuth, loginWithGoogle, logout };
 });
+

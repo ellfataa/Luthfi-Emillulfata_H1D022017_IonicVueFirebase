@@ -16,3 +16,4 @@ const auth = getAuth(firebase);
 const googleProvider = new GoogleAuthProvider();
 
 export { auth, googleProvider };
+
