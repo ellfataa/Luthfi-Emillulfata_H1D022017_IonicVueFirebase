@@ -1,4 +1,4 @@
-TUGAS 9 - PRAKTIKUM PEMROGRAMAN MOBILE
+TUGAS 9 - PRAKTIKUM PEMROGRAMAN MOBILE & TUGAS 10 (dibawah Tugas 9)
 ======================================
 
 Nama    : Luthfi Emillulfata
@@ -82,3 +82,125 @@ Shift Baru  : C
    ![image](https://github.com/user-attachments/assets/5859b8be-beb9-4e4b-8a81-79f086ba8879)
 
    Dari kode diatas bahwa ProfilePage menampilkan informasi user seperti foto profil, nama, dan email. Lalu di header menyertakan tombol logout untuk mengakhiri sesi user dan keluar dari aplikasi.
+
+
+=================================================
+
+TUGAS 10 - PERTEMUAN 11
+====================
+
+**Tampilan Aplikasi**
+
+1. Create ToDO
+
+   ![image](https://github.com/user-attachments/assets/4121ce3a-bd72-42c0-9f62-4be0676d4656)
+
+   ![image](https://github.com/user-attachments/assets/5ec1a03c-0bad-432b-b23c-7ccf20b57c51)
+
+   Fitur menambahkan todo baru dengan input title dan description. Klik tombol "+" di pojok kanan bawah untuk membuka modal input. Setelah mengisi, tekan tombol "Add Todo" untuk menyimpan ke Firestore.
+   
+2. Read ToDo
+
+   ![image](https://github.com/user-attachments/assets/571f3536-78fe-4966-ae99-86006aadb7bb)
+
+   Tampilan diatas merupakan daftar ToDO dengan dua section, yaitu Active Todos dan Completed Todos.
+
+3. Update ToDo
+
+   ![image](https://github.com/user-attachments/assets/50b4f3c7-8a06-4175-b369-6c2967f75b36)
+
+   Diatas adalah tampilan untuk mengupdate ToDO yang telah dibuat sebelumnya, update/edit ToDo dapat dilakukan dengan cara:
+
+      - Geser todo ke kanan dan klik ikon pensil
+
+      - Modal edit akan terbuka dengan data todo yang dipilih
+      
+      - Ubah title atau description
+      
+      - Tekan tombol "Edit Todo" untuk menyimpan perubahan
+
+4. Delete ToDo
+
+   ![image](https://github.com/user-attachments/assets/de8ef750-fb0c-4aee-a522-2ef53dc56f38)
+
+   Diatas kita dapat menghapus ToDo list yang telah dibuat sebelumnya, yaitu dengan cara:
+
+      - Geser todo ke kiri dan klik ikon tempat sampah
+
+      - Konfirmasi penghapusan akan muncul
+      
+      - Todo akan langsung dihapus dari Firestore
+   
+6. Toggle ToDo Status
+
+   ![image](https://github.com/user-attachments/assets/364934c4-f180-4c4b-a232-de50bbb49593)
+
+   ![image](https://github.com/user-attachments/assets/a007b91b-0f84-414c-ac57-76ae8dea0e29)
+
+
+   Mengubah status ToDo dapat dilakukan dengan cara:
+
+      - Geser todo ke kanan dan klik centang untuk mengubah status
+
+      - Todo akan berpindah antara Active dan Completed
+
+      - Status tersimpan di Firestore dengan timestamp update
+
+************************
+
+**Membangun APK dengan Build**
+
+Langkah-langkah:
+
+1. Pastikan Dependensi Terinstal
+
+   `npm install -g @ionic/cli`
+
+   `npm install`
+
+2. Tambahkan Platform Android
+
+   `ionic cap add android`
+   
+3. Build Projek Ionic
+
+   `ionic build`
+   
+4. Sync Projek dengan Capacitor
+
+   `ionic cap sync android`
+   
+5. Buka Projek di Android Studio
+
+   `ionic cap open android`
+   
+8. Generate APK
+
+   - Buka "Build" > "Generate Signed Bundle / APK"
+
+   - Pilih "APK"
+
+   - Buat Keystore baru atau gunakan yang sudah ada
+
+   - Pilih release configuration
+
+   - APK akan tersimpan di android/app/build/outputs/apk/release/
+
+**********************************************
+**Konfigurasi Friebase untuk Android**
+
+1. Generate SHA-1 dan SHA-256
+
+   `keytool -list -v -keystore ~/.android/debug.keystore`
+   
+2. Firebase Controll
+
+   - Masuk ke Project Settings
+   
+   - Pilih tab "Your apps"
+
+   - Klik "Add app" dan pilih Android
+
+   - Sesuaikan Package Name dengan file capacitor.config.ts
+
+   - Tambahkan SHA-1 dan SHA-256 certificate fingerprints
